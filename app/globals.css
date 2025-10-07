@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: #ffffff;
+  --color-foreground: #0a0a0a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #0a0a0a;
+    --color-foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--color-foreground);
+  background: var(--color-background);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom gradient backgrounds */
+.gradient-bg-1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-bg-2 {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.gradient-bg-3 {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .glass-effect {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Оптимизация анимаций для мобильных устройств */
+@media (max-width: 768px) {
+  /* Включаем аппаратное ускорение для плавности */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Форсируем GPU для анимаций */
+  [data-animate],
+  .framer-motion-animation,
+  canvas {
+    will-change: transform, opacity;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* Оптимизация touch событий */
+  button, a, input, textarea {
+    touch-action: manipulation;
+  }
+}
+
+/* Поддержка устройств с предпочтением уменьшенного движения */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Отключаем canvas анимации */
+  canvas {
+    display: none !important;
+  }
+}
+
+/* Оптимизация для touch устройств */
+@media (hover: none) and (pointer: coarse) {
+  /* Ускоряем рендеринг */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Улучшаем производительность скролла */
+  .scroll-container {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+
+  /* Отключаем hover эффекты на мобильных */
+  .hover\:scale-105:hover,
+  .hover\:scale-110:hover {
+    transform: none !important;
+  }
+}
+
+/* Оптимизация для маленьких экранов */
+@media (max-width: 640px) {
+  /* Уменьшаем количество анимируемых элементов */
+  .animate-on-scroll:nth-child(n+5) {
+    animation-delay: 0s !important;
+  }
+
+  /* Упрощаем градиенты для производительности */
+  .complex-gradient {
+    background: linear-gradient(180deg, var(--start-color), var(--end-color)) !important;
+  }
+}
