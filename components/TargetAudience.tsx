@@ -77,7 +77,7 @@ export default function TargetAudience() {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className={`px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 ${shouldAnimate ? 'hover:scale-105' : ''}`}
             >
-              See If We're a Fit
+              See If We&apos;re a Fit
             </button>
           </motion.div>
 

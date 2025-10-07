@@ -68,7 +68,7 @@ export default function ContactForm() {
             className="space-y-8"
           >
             <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">What You'll Get</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">What You&apos;ll Get</h3>
               <ul className="space-y-4">
                 {[
                   'Free 30-minute strategy consultation',
@@ -230,7 +230,7 @@ export default function ContactForm() {
               </button>
 
               <p className="text-xs text-gray-500 text-center">
-                By submitting, you agree to our Privacy Policy. We'll never share your data.
+                By submitting, you agree to our Privacy Policy. We&apos;ll never share your data.
               </p>
             </form>
           </motion.div>
