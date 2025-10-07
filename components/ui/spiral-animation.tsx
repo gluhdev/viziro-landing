@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 export function SpiralAnimation() {
     const canvasRef = useRef<HTMLCanvasElement>(null)
     const particlesRef = useRef<any[]>([])
-    const animationRef = useRef<number>()
+    const animationRef = useRef<number | undefined>(undefined)
     const mouseRef = useRef({ x: 0, y: 0 })
     const timeRef = useRef(0)
 

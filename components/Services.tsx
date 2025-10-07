@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { ChartIcon, LightbulbIcon, TrendingIcon } from './icons';
 import { useDeviceDetection } from '../hooks/useDeviceDetection';
 
@@ -46,7 +46,7 @@ const services = [
   }
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -56,14 +56,14 @@ const containerVariants = {
   }
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut"
+      ease: [0, 0, 0.2, 1] as [number, number, number, number] // easeOut cubic-bezier
     }
   }
 };
@@ -107,7 +107,7 @@ export default function Services() {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={shouldAnimate ? { y: -12, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } } : undefined}
+              whileHover={shouldAnimate ? { y: -12, scale: 1.02, transition: { duration: 0.3, ease: [0, 0, 0.2, 1] as [number, number, number, number] } } : undefined}
               className="group relative h-full"
             >
               {/* Gradient border container */}
